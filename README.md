@@ -1,66 +1,17 @@
-## Foundry
+## DYOFarm
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+DYOFarm is a permissionless protocol for deploying custom ERC20 staking pools on Ethereum mainnet.
 
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
+DYOFarm addresses a sore need in defi - the ability for people to create custom staking pools for any ERC20. These staking pools, or "farms", have 4 properties: deposit token, reward token, start time and end time. Users must stake deposit token in the farm to earn reward token. Rewards are distributed linearly, pro rata in between start time and end time.
 
 ## Usage
 
-### Build
+### Contracts
 
-```shell
-$ forge build
-```
+The DYOFarm protocol consists of two main contracts:
 
-### Test
+1. `DYOFarm`: This contract represents a staking pool where users can stake deposit tokens and earn reward tokens.
 
-```shell
-$ forge test
-```
+2. `DYOFarmFactory`: This contract is responsible for deploying new instances of `DYOFarm` contracts.
 
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Please refer to the contract source code for more details on the implementation.
